@@ -6,16 +6,6 @@ interface ItemsType {
   img: string;
 }
 
-const itemData: ItemsType[] = [
-  { id: 1, img: "/image12.png" },
-  { id: 2, img: "/image13.png" },
-  { id: 3, img: "/image14.png" },
-  { id: 4, img: "/image15.png" },
-  { id: 5, img: "/image16.png" },
-  { id: 6, img: "/image17.png" },
-  { id: 7, img: "/image18.png" },
-];
-
 const GellarySection = () => {
   return (
     <section className="max-w-[1440px] mx-auto p-8">
