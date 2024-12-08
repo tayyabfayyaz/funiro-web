@@ -1,10 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-
-interface ItemsType {
-  id: number;
-  img: string;
-}
+giti
 
 const GellarySection = () => {
   return (
