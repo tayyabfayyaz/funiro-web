@@ -31,7 +31,7 @@ const CategorySection = () => {
           {cardData.map((card, index) => (
               <div
                   key={index}
-                  className="w-[720px] h-[480px] border rounded-lg shadow-lg overflow-hidden text-center flex flex-col justify-between"
+                  className="w-full md:w-full lg:w-[720px] xl:w-[720px] h-[480px] my-5 md:my-5 lg:my-0 xl:my-0 border rounded-lg shadow-lg overflow-hidden text-center flex flex-col justify-between"
               >
                   <Image
                       src={card.imagePath}

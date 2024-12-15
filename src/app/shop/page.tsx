@@ -36,6 +36,10 @@ function ShopPage(){
             </Breadcrumb>
 
         </section>
+        <div className="text-4xl my-8 w-full bg-gray-300 py-3 shadow-lg shadow-gray-400">
+            <h2 className="text-center font-bold">Our Products</h2>
+        </div>
+
         <ProductSection />
         <ProductSection />
         <ProductSection />

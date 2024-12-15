@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const GellarySection = () => {
   return (
-    <section className="max-w-[1440px] mx-auto p-8">
+    <section className="max-w-[1440px] mx-auto p-8 hidden md:hidden lg:block xl:block">
       <p className="text-[18px] text-center mt-4 text-gray-500">
         Share your setup with
       </p>

@@ -3,47 +3,42 @@ import { FaHeadset } from "react-icons/fa6";
 import { LuBadgeCheck } from "react-icons/lu";
 import { FaHands } from "react-icons/fa";
 
-
-
-
 const ServiceSection = () => {
-    return(
+    return (
         <>
-        <section className="max-w-[1440px] h-[270px] bg-gray-100 block md:block lg:flex xl:flex gap-10 mt-10 justify-center items-center">
-
-
-            <div className="flex gap-2 my-5 md:my-3 lg:my-0 xl:my-0">
-                <p className="text-[45px] md:text-[45px] lg:text-[70px] xl:text-[70px]"><Trophy /></p>
-                <div className="text_container">
-                    <h3 className="text-[24px]">High Quality</h3>
-                    <p className="text-[16px] text-gray-400">Crafted from top materials</p>
+            <section className="max-w-[1440px] mx-auto bg-gray-100 flex flex-wrap gap-5 justify-center items-center py-10 px-5">
+                <div className="flex items-center gap-3 max-w-[300px]">
+                    <p className="text-[45px] md:text-[55px]"><Trophy /></p>
+                    <div>
+                        <h3 className="text-[20px] md:text-[24px] font-semibold">High Quality</h3>
+                        <p className="text-[14px] md:text-[16px] text-gray-500">Crafted from top materials</p>
+                    </div>
                 </div>
-            </div>
-            <div className="flex gap-2 my-5 md:my-3 lg:my-0 xl:my-0">
-                <p className="text-[45px] md:text-[45px] lg:text-[70px] xl:text-[70px]"><LuBadgeCheck /></p>
-                <div className="text_container">
-                    <h3 className="text-[24px]">Warranty Protection</h3>
-                    <p className="text-[16px] text-gray-400">Our 2 years</p>
-                </div>
-            </div>
 
-            <div className="flex gap-2 my-5 md:my-3 lg:my-0 xl:my-0">
-                <p className="text-[45px] md:text-[45px] lg:text-[70px] xl:text-[70px]"><FaHands /></p>
-                <div className="text_container">
-                    <h3 className="text-[24px]">Free Sopping</h3>
-                    <p className="text-[16px] text-gray-400">Order over 150 $</p>
+                <div className="flex items-center gap-3 max-w-[300px]">
+                    <p className="text-[45px] md:text-[55px]"><LuBadgeCheck /></p>
+                    <div>
+                        <h3 className="text-[20px] md:text-[24px] font-semibold">Warranty Protection</h3>
+                        <p className="text-[14px] md:text-[16px] text-gray-500">Our 2 years</p>
+                    </div>
                 </div>
-            </div>
 
-            <div className="flex gap-2 my-5 md:my-3 lg:my-0 xl:my-0">
-                <p className="text-[45px] md:text-[45px] lg:text-[70px] xl:text-[70px]"><FaHeadset /></p>
-                <div className="text_container">
-                    <h3 className="text-[24px]">24 / 7 Support</h3>
-                    <p className="text-[16px] text-gray-400">Dadicated support</p>
+                <div className="flex items-center gap-3 max-w-[300px]">
+                    <p className="text-[45px] md:text-[55px]"><FaHands /></p>
+                    <div>
+                        <h3 className="text-[20px] md:text-[24px] font-semibold">Free Shipping</h3>
+                        <p className="text-[14px] md:text-[16px] text-gray-500">Order over $150</p>
+                    </div>
                 </div>
-            </div>
 
-        </section>
+                <div className="flex items-center gap-3 max-w-[300px]">
+                    <p className="text-[45px] md:text-[55px]"><FaHeadset /></p>
+                    <div>
+                        <h3 className="text-[20px] md:text-[24px] font-semibold">24 / 7 Support</h3>
+                        <p className="text-[14px] md:text-[16px] text-gray-500">Dedicated support</p>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };

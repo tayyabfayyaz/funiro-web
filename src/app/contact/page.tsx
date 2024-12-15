@@ -10,7 +10,7 @@ import {
 import ServiceSection from "../components/servicesection";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot, FaClock  } from "react-icons/fa6";
-import Button from "../components/button";
+import Button from "../components/Btn";
 
   
   
