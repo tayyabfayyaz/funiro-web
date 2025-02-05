@@ -11,6 +11,7 @@ export default function CheckoutPage() {
   const [labelUrl, setLabelUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // Address of the store
   const addressFrom = {
     name: "Your Store",
     street1: "123 Main St",
@@ -20,6 +21,7 @@ export default function CheckoutPage() {
     country: "US",
   };
 
+  // Address of the customer
   const addressTo = {
     name: "Customer Name",
     street1: "456 Another St",
@@ -29,6 +31,7 @@ export default function CheckoutPage() {
     country: "US",
   };
 
+  // Parcel details
   const parcel = {
     length: "10",
     width: "5",
@@ -38,11 +41,12 @@ export default function CheckoutPage() {
     mass_unit: "lb",
   };
 
+  // Function to get shipping rates
   const getShippingRates = async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("/shippo/get-rates", {
+      const response = await fetch("/E:/GIAIC Q2/funiro-functional/src/app/api/shippo/get-rates", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ addressFrom, addressTo, parcel }),
@@ -61,6 +65,7 @@ export default function CheckoutPage() {
     }
   };
 
+  // Function to create a shipping label
   const createShippingLabel = async () => {
     if (!selectedRate) {
       setError("Please select a shipping rate!");
@@ -70,7 +75,7 @@ export default function CheckoutPage() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("/shippo/create-label", {
+      const response = await fetch("/api/shippo/create-label", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rateId: selectedRate }),
@@ -97,6 +102,7 @@ export default function CheckoutPage() {
         <p className="text-gray-600">Your cart is empty.</p>
       ) : (
         <div>
+          {/* Button to fetch shipping rates */}
           <button
             onClick={getShippingRates}
             disabled={loading}
@@ -133,6 +139,7 @@ export default function CheckoutPage() {
                 ))}
               </ul>
 
+              {/* Button to create shipping label */}
               <button
                 onClick={createShippingLabel}
                 disabled={loading || !selectedRate}

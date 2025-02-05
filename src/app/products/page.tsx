@@ -16,6 +16,7 @@ import {
 import ServiceSection from "../components/servicesection";
   import { createClient } from "@sanity/client";
   import ProductList from "@/app/components/productList";
+  import ProductSection from '@/app/components/productsection';
   
   const client = createClient({
     projectId: "jvckhl4n",
@@ -33,6 +34,7 @@ import ServiceSection from "../components/servicesection";
     tags: string[];
     discountPercentage: number;
     isNew: boolean;
+    slug: string;
   }
   
   async function getProducts(): Promise<Product[]> {
@@ -45,7 +47,8 @@ import ServiceSection from "../components/servicesection";
         "imageUrl": productImage.asset->url,
         price,
         tags,
-        discountPercentage,
+        isNew,
+        "slug": slug.current
         isNew
       }`;
       const products = await client.fetch(query);
@@ -81,6 +84,7 @@ const ShopPage = async () => {
             <h2 className="text-center font-bold text-[36px]">Our Products</h2>
         </div>
 
+        <ProductSection />
         <ProductList initialProducts={products} />
 
         <Pagination className="mt-10">

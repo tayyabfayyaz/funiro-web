@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { Button } from "./Btn";
-import { useState } from "react";
 import ProductDescription from '@/app/components/productDescription'
 import { useRouter } from 'next/navigation';
+import { FaRegHeart } from "react-icons/fa";
+import { IoShareSocialOutline } from "react-icons/io5";
+
+
 
 interface Product {
   imageUrl: string
@@ -39,8 +42,7 @@ const ProductList = ({ initialProducts }: { initialProducts: Product[] | Product
   return(
     <>
     <div className="block md:block lg:flex xl:flex gap-6 justify-center flex-wrap overflow-x-auto">
-      {
-        products.map((product) => (
+      {products.map((product) => (
             <div
               key={product._id}
               className="relative group block mx-auto md:mx-auto lg:mx-0 xl:mx-0 py-3 w-[285px] h-fit bg-white mt-8 shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
@@ -71,15 +73,23 @@ const ProductList = ({ initialProducts }: { initialProducts: Product[] | Product
               </div>
     
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Button
+                  <Button
                   text="Product Info"
                   onClick={() => navigateToProductDetail(product.slug)}
-                  className="px-6 py-3 text-[16px] text-white bg-customBrown rounded-lg hover:bg-customBrown-dark"
-                />
+                  className="px-6 py-3 text-[16px] text-white bg-customBrown rounded-lg hover:bg-white hover:text-customBrown mb-2"
+                  />
+                  <div className="flex space-x-4 mt-2">
+                  <button className="text-white hover:text-red-500 transition-colors duration-300">
+                    <i className="fas fa-heart"><FaRegHeart className="text-xl" /></i>
+                  </button>
+                  <button className="text-white hover:text-green-500 transition-colors duration-300">
+                    <i className="fas fa-share-alt"><IoShareSocialOutline className="text-xl" /></i>
+                  </button>
+                  </div>
                 </div>
             </div>
           ))   
-      }
+        }
     </div>
     </>
   );

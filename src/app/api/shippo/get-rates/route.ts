@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       address_from: addressFrom,
       address_to: addressTo,
       parcels: [parcel],
-      carrier_accounts: ["shippo_test_f8a9e08e9299515a7629d210d0df9da7cc2683ad"], // Replace with your Shippo carrier ID
+      carrier_accounts: [process.env.SHIPPO_CARRIER_ACCOUNT_ID!], // Replace with your Shippo carrier ID
       async: false,
     });
 

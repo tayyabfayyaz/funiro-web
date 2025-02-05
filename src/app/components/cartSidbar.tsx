@@ -9,15 +9,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button"; // Assuming you're using shadcn/ui's Button component
+import { Button } from "@/components/ui/button";
 
 const CartSidebar = () => {
-  const { cart, removeFromCart } = useCart();
-
-  const updateCartItemQuantity = (id: string, quantity: number) => {
-    // Implement your logic to update the cart item quantity
-    console.log(`Updating item ${id} to quantity ${quantity}`);
-  };
+  const { cart, removeFromCart, updateCartItemQuantity } = useCart();
 
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
